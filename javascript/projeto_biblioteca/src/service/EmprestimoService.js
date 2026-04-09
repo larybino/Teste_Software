@@ -1,4 +1,5 @@
 const constantes = require("../../utils/Constantes");
+const msg = require("../../utils/msg");
 
 class EmprestimoService {
     static validarEmprestimo(usuario, livro){
@@ -11,7 +12,7 @@ class EmprestimoService {
         return true;
     }
     static validaLivro(livro){
-        if(!livro.disponivel)return false;
+        if(!livro.disponivel) throw new Error(msg.LIVRO_INDISPONÍVEL);
         return true;
     }
 }

@@ -1,0 +1,43 @@
+[
+    {
+    "descricao": "CT-01: Usuário e livro válidos",
+    "ativo": true,
+    "emprestimosAtivos":0,
+    "multaPendente":0,
+    "disponivel": true,
+    "resultado": true
+    },
+    {
+    "descricao": "CT-02: Usuário inválido(ativo) e livro válido",
+    "ativo": false,
+    "emprestimosAtivos":0,
+    "multaPendente":0,
+    "disponivel": true,
+    "resultado": false
+    },
+    {
+    "descricao": "CT-03: Usuário inválido(emprestimosAtivos) e livro válidos",
+    "ativo": true,
+    "emprestimosAtivos":4,
+    "multaPendente":0,
+    "disponivel": true,
+    "resultado": false
+    },
+    {
+    "descricao": "CT-04: Usuário inválido(multaPendente) e livro válidos",
+    "ativo": true,
+    "emprestimosAtivos":0,
+    "multaPendente":51,
+    "disponivel": true,
+    "resultado": false
+    },
+    {
+    "descricao": "CT-05: Usuário válido e livro inválido",
+    "ativo": true,
+    "emprestimosAtivos":0,
+    "multaPendente":0,
+    "disponivel": false,
+    "resultado": false
+    }
+
+]
