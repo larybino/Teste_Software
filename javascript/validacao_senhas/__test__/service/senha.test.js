@@ -15,3 +15,21 @@ test('Pelo menos uma letra maiúscula.' , () => {
     //assert
     expect(false).toBe(resultado)
 });
+
+test('Pelo menos uma letra minúscula.' , () => {
+    //arange
+    const senha = "12345678A"
+    //act 
+    const resultado = SenhaService.validarSenha(senha)  
+    //assert
+    expect(false).toBe(resultado)
+});
+
+test('Pelo menos um número.' , () => {
+    //arange
+    const senha = "abcdefghA"
+    //act 
+    const resultado = SenhaService.validarSenha(senha)
+    //assert
+    expect(false).toBe(resultado)
+});
