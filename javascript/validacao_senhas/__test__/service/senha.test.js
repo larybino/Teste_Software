@@ -51,3 +51,12 @@ test('Não deve conter espaços em branco.' , () => {
     //assert
     expect(false).toBe(resultado)
 });
+
+test('Senha válida' , () => {
+    //arange
+    const senha = "Abcdefg1@"
+    //act
+    const resultado = SenhaService.validarSenha(senha)
+    //assert
+    expect(true).toBe(resultado)
+});
