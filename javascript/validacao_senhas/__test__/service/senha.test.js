@@ -1,6 +1,9 @@
+const Senha = require("../../src/model/Senha");
+const SenhaService = require("../../src/service/SenhaService");
+
 test('Mínimo de 8 caracteres' , () => {
     //arange 
-    const senha = "1234567"
+    const senha = new Senha({senha: "Ab1@"}).senha
     //act 
     const resultado = SenhaService.validarSenha(senha)
     //assert
@@ -9,7 +12,7 @@ test('Mínimo de 8 caracteres' , () => {
 
 test('Pelo menos uma letra maiúscula.' , () => {
     //arange
-    const senha = "12345678"
+    const senha = new Senha({senha: "12345678"}).senha
     //act 
     const resultado = SenhaService.validarSenha(senha)
     //assert
@@ -18,7 +21,7 @@ test('Pelo menos uma letra maiúscula.' , () => {
 
 test('Pelo menos uma letra minúscula.' , () => {
     //arange
-    const senha = "12345678A"
+    const senha = new Senha({senha: "12345678A"}).senha
     //act 
     const resultado = SenhaService.validarSenha(senha)  
     //assert
@@ -27,7 +30,7 @@ test('Pelo menos uma letra minúscula.' , () => {
 
 test('Pelo menos um número.' , () => {
     //arange
-    const senha = "abcdefghA"
+    const senha = new Senha({senha: "abcdefghA"}).senha
     //act 
     const resultado = SenhaService.validarSenha(senha)
     //assert
@@ -36,7 +39,7 @@ test('Pelo menos um número.' , () => {
 
 test('Pelo menos um caractere especial (!@#$%^&*).' , () => {
     //arange
-    const senha = "abcdefghA1" 
+    const senha = new Senha({senha: "abcdefghA1"}).senha
     //act
     const resultado = SenhaService.validarSenha(senha)
     //assert
@@ -45,7 +48,7 @@ test('Pelo menos um caractere especial (!@#$%^&*).' , () => {
 
 test('Não deve conter espaços em branco.' , () => {
     //arange
-    const senha = "abc defgA1@"
+    const senha = new Senha({senha: "abc defgA1@"}).senha
     //act
     const resultado = SenhaService.validarSenha(senha)
     //assert
@@ -54,7 +57,7 @@ test('Não deve conter espaços em branco.' , () => {
 
 test('Senha válida' , () => {
     //arange
-    const senha = "Abcdefg1@"
+    const senha = new Senha({senha: "Abcdefg1@"}).senha
     //act
     const resultado = SenhaService.validarSenha(senha)
     //assert
