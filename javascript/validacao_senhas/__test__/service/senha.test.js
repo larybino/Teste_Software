@@ -33,3 +33,21 @@ test('Pelo menos um número.' , () => {
     //assert
     expect(false).toBe(resultado)
 });
+
+test('Pelo menos um caractere especial (!@#$%^&*).' , () => {
+    //arange
+    const senha = "abcdefghA1" 
+    //act
+    const resultado = SenhaService.validarSenha(senha)
+    //assert
+    expect(false).toBe(resultado)
+});
+
+test('Não deve conter espaços em branco.' , () => {
+    //arange
+    const senha = "abc defgA1@"
+    //act
+    const resultado = SenhaService.validarSenha(senha)
+    //assert
+    expect(false).toBe(resultado)
+});
