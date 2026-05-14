@@ -2,7 +2,7 @@ package lary.bino;
 
 import java.time.LocalDate;
 
-public class Calculadora {
+public class Calendario {
 
     public String getCalendario() {
         LocalDate hoje = LocalDate.now();
