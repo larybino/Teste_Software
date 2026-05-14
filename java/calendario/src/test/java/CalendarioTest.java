@@ -115,4 +115,27 @@ class CalendarioTest {
             () -> calendario.getCalendario("6", "10000"));
     }
 
+    @Test
+    @DisplayName("CT14 - Ano anterior à reforma: setembro de 1751 (calendário normal)")
+    void testAnteriorReformaGregoriana() {
+        String resultado = calendario.getCalendario("9", "1751");
+        assertNotNull(resultado);
+        assertTrue(resultado.contains("1751"));
+    }
+
+    @Test
+    @DisplayName("CT15 - Ano posterior à reforma: setembro de 1753 (calendário normal)")
+    void testPosteriorReformaGregoriana() {
+        String resultado = calendario.getCalendario("9", "1753");
+        assertNotNull(resultado);
+        assertTrue(resultado.contains("1753"));
+    }
+
+    @Test
+    @DisplayName("CT16 - Mais de dois parâmetros: excedentes ignorados")
+    void testVarargsMaisDeDoisParametros() {
+        String resultado = calendario.getCalendario("6", "2025", "99");
+        assertNotNull(resultado);
+        assertTrue(resultado.contains("2025"));
+    }
 }
