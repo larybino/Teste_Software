@@ -51,4 +51,18 @@ class IrpfTest {
         assertEquals(1055.64, resultado, 0.01);
     }
 
+    @Test
+    @DisplayName("CT06 - Salário negativo (inválido)")
+    void testSalarioNegativo() {
+        assertThrows(IllegalArgumentException.class,
+            () -> irpf.calcular(-500.00));
+    }
+
+    @Test
+    @DisplayName("CT07 - Salário zero (inválido)")
+    void testSalarioZero() {
+        assertThrows(IllegalArgumentException.class,
+            () -> irpf.calcular(0.00));
+    }
+
 }
